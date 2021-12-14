@@ -1,0 +1,256 @@
+body,
+html {
+    background-color: #ffffff;
+    height: 150vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #55b5c4;
+    animation: loader 2s infinite ease;
+}
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+.topnav {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    transition: .5s ease-out;
+    top: 50px;
+}
+
+.topnav.show {
+    opacity: 1;
+    top: 0;
+}
+
+.nav {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    float: right;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    margin-top: 5px;
+    opacity: 1;
+    text-decoration-color: #418c94;
+    transition: .5s ease-out;
+}
+
+.nav.show{
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.nav:hover {
+    text-decoration: underline;
+    text-decoration-color: #418c94;
+    text-decoration-thickness: 0.3em;
+}
+
+.logo a {
+    font-family: 'Righteous', cursive;
+    font-weight: 800;
+    float: left;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    color: #000000;
+    opacity: 1;
+    transition: .5s ease-out;
+}
+
+.logo a.show {
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.logo a:hover {
+    color: #418c94;
+}
+
+.header-page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url("/img/st3ambackground.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.header-page-text {
+    margin: 0;
+    padding: 0;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    color: rgb(30, 30, 30);
+}
+
+.header-page-text h1 {
+    margin: 0;
+    padding: 0 0 0 20%;
+    width: 50%;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 800;
+    font-size: 5vw;
+}
+
+.header-page-text p {
+    margin: 0;
+    padding: 2% 0 0 20%;
+    width: 50%;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+.header-page-image {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.header-page-image img{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/*Main Page*/
+.main-page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main-page-block {
+    margin: 5% 0 0 0;
+    padding: 5%;
+    width: 50%;
+    position: relative;
+    background-color: #418c94;
+}
+
+.main-page-block h1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 800;
+    font-size: 2vw;
+}
+
+.main-page-block p {
+    margin: 0;
+    padding: 3% 0 0 0;
+    width: 100%;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 300;
+    font-size: 1vw;
+}
+
+#problem {
+    border-radius: 0 15px 15px 0;
+    text-align: start;
+    float: left;
+    left: -100%;
+    opacity: 0;
+    transition: .5s ease-out;
+}
+
+#problem.show {
+    left: 0;
+    opacity: 1;
+}
+
+#solution {
+    border-radius:  15px 0 0 15px;
+    text-align: start;
+    float: right;
+    right: -100%;
+    opacity: 0;
+    transition: .5s ease-out;
+}
+
+#solution.show {
+    right: 0;
+    opacity: 1;
+}
+
+#research {
+    border-radius: 0 15px 15px 0;
+    text-align: start;
+    float: left;
+    left: -100%;
+    opacity: 0;
+    transition: .5s ease-out;
+}
+
+#research.show {
+    left: 0;
+    opacity: 1;
+}
+
+@keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+}
+
+@keyframes loader-inner {
+    0% { height: 0;}
+    25% { height: 0;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0;}
+}
